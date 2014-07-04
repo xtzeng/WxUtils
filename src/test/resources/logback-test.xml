@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!--
+		scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true。
+		scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。
+		debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。
+	-->
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!--
+			encoders are assigned the type
+			ch.qos.logback.classic.encoder.PatternLayoutEncoder by default
+		-->
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level %logger{46}]: %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<!--
+		<logger name="chapters.configuration" level="INFO" /> <logger
+		name="chapters.configuration.Foo" level="DEBUG" />
+	-->
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 可以是相对路径，也可以是决定路径 -->
+		<file>E:/log/j5-core/test.log</file>
+ 
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 可以是相对路径，也可以是决定路径 -->
+			<fileNamePattern>E:/log/j5-core/test-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- or whenever the file size reaches 100MB -->
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+        
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level %logger{46}]: %msg%n
+			</pattern>
+		</encoder>
+	</appender>   
+
+	<logger name="jdbc.sqlonly" level="ERROR" />
+	<logger name="jdbc.sqltiming" level="INFO" />
+	<logger name="jdbc.resultset" level="OFF" />
+	<logger name="jdbc.connection" level="OFF" />
+	<logger name="jdbc.audit" level="OFF" />
+	<logger name="log4jdbc.debug" level="OFF" />
+	
+	<logger name="org" level="ERROR" />
+	<logger name="net" level="ERROR" />
+	
+	<logger name="com.mchange" level="DEBUG" />
+	
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
