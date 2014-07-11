@@ -50,7 +50,7 @@ public class WeixinInterceptor implements Interceptor{
 			return invocation.invoke();
 		} 
 		
-		logger.debug("weixin拦截器[start]");
+		logger.debug("weixin拦截器【start】");
 		
 		ActionContext ctx = ActionContext.getContext();
 		HttpServletRequest request = (HttpServletRequest)ctx.get(ServletActionContext.HTTP_REQUEST);
@@ -75,12 +75,12 @@ public class WeixinInterceptor implements Interceptor{
 		
 		//2. 如果是初始化接入请求则直接返回echostr
 		if(StringUtils.isBlank(xml)){
-			logger.info("响应腾讯初始化接入[start]");
+			logger.info("响应腾讯初始化接入【start】");
 			HttpServletResponse response = ServletActionContext.getResponse();
 			PrintWriter writer = response.getWriter();
 			writer.print(request.getParameter("echostr"));
 			logger.info("echostr: " + request.getParameter("echostr"));
-			logger.info("响应腾讯初始化接入[end]");
+			logger.info("响应腾讯初始化接入【end】");
 			return null;
 		}
 		
@@ -90,12 +90,12 @@ public class WeixinInterceptor implements Interceptor{
         //设置weixinModel
         weixinAction.setWeixinModel(weixinModel);
         
-		logger.debug("weixin拦截器[end]");
+		logger.debug("weixin拦截器【end】");
 		return invocation.invoke();
 	}
 
 	private boolean validateTencentToken(HttpServletRequest request) {
-		logger.debug("微信验证[start]");
+		logger.debug("微信验证【start】");
 		
 		boolean result = false;
 		//微信加密签名，signature结合了开发者填写的token参数和请求中的timestamp参数、nonce参数。

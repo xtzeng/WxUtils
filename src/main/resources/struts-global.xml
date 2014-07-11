@@ -27,15 +27,15 @@
         <!-- 定义一个拦截器 -->  
         <interceptors>
 			<!-- 请求输入流拦截器 -->                     
-			<interceptor name="weixinInterceptor" class="com.elink.ydjr.dxjc.interceptor.WeixinInterceptor"></interceptor>
+			<interceptor name="weixinInterceptor" class="com.xt.weixin.interceptor.WeixinInterceptor"></interceptor>
 			<!-- 注册登录检查拦截器栈，
 				包含了默认的拦截器 -->
-			<interceptor-stack name="ydjrWxStack">
+			<interceptor-stack name="WxStack">
 				<interceptor-ref name="weixinInterceptor"></interceptor-ref>
 				<interceptor-ref name="defaultStack"></interceptor-ref>
 			</interceptor-stack>
 		</interceptors>
-		<default-interceptor-ref name="ydjrWxStack"/>
+		<default-interceptor-ref name="WxStack"/>
          
 	   <global-results>
         	<result name="error" >forbidden.jsp</result>
