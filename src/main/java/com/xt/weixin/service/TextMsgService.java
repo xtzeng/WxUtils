@@ -45,9 +45,7 @@ public class TextMsgService {
 		responseVO.setMsgType("text");
 		Date now = new Date();
 		responseVO.setCreateTime(now.getTime());
-//		responseVO.setContent("请点击该链接进入系统:<a href='"
-//				+ SystemConfigs.getInstance().get("system.url") + "/user.home.action?openId="+openId +"'>登录系统</a>");
-//		
+		responseVO.setContent("请点击该链接进入系统:<a href='www.baidu.com'>登录系统</a>");
 		
 		return responseVO;
 	}

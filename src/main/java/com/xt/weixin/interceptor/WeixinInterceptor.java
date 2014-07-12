@@ -58,6 +58,7 @@ public class WeixinInterceptor implements Interceptor{
 		WeixinAction weixinAction = (WeixinAction)invocation.getAction();
 		//0 读取xml
 		InputStream inputStream = request.getInputStream();
+		logger.info("inputStream===========【" + inputStream + "】");
 		String xml = IOUtils.toString(inputStream, "UTF-8");
 		
 		logger.debug("接受到的xml:\n" + xml);
@@ -122,7 +123,7 @@ public class WeixinInterceptor implements Interceptor{
 			logger.debug("验证失败！");
 		}
 		
-		logger.debug("微信验证[done]");
+		logger.debug("微信验证【done】");
 		return result;
 	}
 
