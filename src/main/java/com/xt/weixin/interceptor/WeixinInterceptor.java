@@ -47,6 +47,7 @@ public class WeixinInterceptor implements Interceptor{
 	@Override
 	public String intercept(ActionInvocation invocation) throws Exception {	
 		if(!(invocation.getAction() instanceof WeixinAction)){
+			logger.info("【不是来自微信服务器的请求】");
 			return invocation.invoke();
 		} 
 		
