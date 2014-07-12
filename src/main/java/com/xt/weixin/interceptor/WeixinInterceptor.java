@@ -96,6 +96,8 @@ public class WeixinInterceptor implements Interceptor{
 		return invocation.invoke();
 	}
 
+	
+	//校验消息的真实性
 	private boolean validateTencentToken(HttpServletRequest request) {
 		logger.debug("微信验证【start】");
 		
@@ -170,6 +172,8 @@ public class WeixinInterceptor implements Interceptor{
             return false;  
         }  
     }
+    
+    
     //数组转字符串  
     public String ArrayToString(String [] arr){  
         StringBuffer bf = new StringBuffer();  

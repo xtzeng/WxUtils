@@ -48,7 +48,7 @@ public class WeixinAction extends BaseAction implements WeixinModelDriven{
 	private SubscriptionCountService subscriptionCountService;
 	
 	/**
-	 * 分发腾讯发过来的请求
+	 * 分发微信发过来的请求
 	 */
 	public void weixinDispatch() {
 		
@@ -76,78 +76,6 @@ public class WeixinAction extends BaseAction implements WeixinModelDriven{
 			logger.debug("undefine type of weixinModel");
 		}
 
-	}
-	
-
-
-	public void dxjcDispatch() {
-		
-		if( weixinModel instanceof EventRequestVO ){
-			EventRequestVO eventVo = (EventRequestVO) weixinModel;
-	
-		    if("CLICK".equals(eventVo.getEvent())&&"CONTACT".equals(eventVo.getEventKey())){
-				
-		    	
-		    	Object responseVO = textMsgService.handleLoginTextContact(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"UNHEARD".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextUnheard(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"PRIVILEGES".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextPrivileges(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"FISH".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextFish(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"STEP".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextStep(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"FEEDBACK".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextFeedBack(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}else if("CLICK".equals(eventVo.getEvent())&&"POPULARSTAR".equals(eventVo.getEventKey())){
-				
-				//订阅号统计
-				//微信返回页面显示
-				Object responseVO = textMsgService.handlePictureTextPopularStar(eventVo);
-				write(XmlUtils.writeXml(responseVO));
-			}
-
-			logger.debug("weixinModel is a type of CLICK !  key ： " + eventVo.getEventKey());
-
-		}else if( weixinModel instanceof TextResquestVO ){
-			TextResquestVO textVO = (TextResquestVO)weixinModel;
-			String content = textVO.getContent();
-			if(StringUtils.equals(content, "陈奕迅")){
-				Object responseVO = textMsgService.handlePictureTextPrivileges(textVO);
-				write(XmlUtils.writeXml(responseVO));
-			}else{
-				Object responseVO = textMsgService.handlePictureTextPopularStar(textVO);
-				write(XmlUtils.writeXml(responseVO));
-			}
-			
-			
-		}else{
-			logger.debug("undefine type of weixinModel");
-			
-		}
-		
-		
 	}
 	
 	
