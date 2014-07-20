@@ -61,7 +61,13 @@ public class WeixinAction extends BaseAction implements WeixinModelDriven{
 				Object responseVO = textMsgService.handleTextMsg(textVO);
 				write(XmlUtils.writeXml(responseVO));
 				logger.debug("weixinModel is a type of TextRequ");
+			}else if (StringUtils.equals(content, "layout")) {
+				//如果用户发的是文本信息，而且文本内容为系统，返回系统链接
+				Object responseVO = textMsgService.handlePictureMessage(textVO);
+				write(XmlUtils.writeXml(responseVO));
+				logger.debug("weixinModel is a type of PictureRequ");
 			}
+			
 		}else if( weixinModel instanceof EventRequestVO ){
 			EventRequestVO eventVo = (EventRequestVO) weixinModel;
 	

@@ -50,6 +50,56 @@ public class TextMsgService {
 		return responseVO;
 	}
 	
+	/**
+	 * 人气新星
+	 * @param requestVO
+	 * @return
+	 */
+	public PictureTextResponseVO handlePictureMessage(WeixinVO requestVO){
+		
+        PictureTextResponseVO responseVO = new PictureTextResponseVO();
+		String openId = requestVO.getFromUserName();
+		responseVO.setToUserName(requestVO.getFromUserName());
+		responseVO.setFromUserName(requestVO.getToUserName());
+		responseVO.setMsgType("news");
+		Date now = new Date();
+		responseVO.setCreateTime(now.getTime());
+		responseVO.setArticleCount(2);
+		List<PictureTextResponseVO.item> list =  new ArrayList<PictureTextResponseVO.item>();
+		
+		PictureTextResponseVO.item i1 = responseVO.new item();
+		i1.setTitle("一代佳人2014“人气宝贝”");
+		i1.setDescription("人气风云榜");
+		//i1.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/renqi.jpg");
+		//i1.setUrl(SystemConfigs.getInstance().get("system.url")+"/starInfo.hotStar.action?openId="+openId);
+		list.add(i1);
+		
+		PictureTextResponseVO.item i2 = responseVO.new item();
+		i2.setTitle("活动详情\n点击详情 >>");
+		i2.setDescription("活动详情\n点击详情 >>");
+		//i2.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/detail.jpg");
+		//i2.setUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/activityDetailInfo.jsp?openId="+openId);
+		list.add(i2);
+		
+		/*PictureTextResponseVO.item i3 = responseVO.new item();
+		i3.setTitle("足球宝贝\n点击详情 >>");
+		i3.setDescription("足球宝贝\n点击详情 >>");
+		i3.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/popularStar_04.jpg");
+		i3.setUrl(SystemConfigs.getInstance().get("system.url")+"/starInfo.hotStar.action?openId="+openId);
+		list.add(i3);*/
+		
+		/*PictureTextResponseVO.item i4 = responseVO.new item();
+		i4.setTitle("最新佳丽\n点击详情 >>");
+		i4.setDescription("最新佳丽\n点击详情 >>");
+		i4.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/popularStar_04.jpg");
+		i4.setUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/newBaby.jsp?openId="+openId);
+		list.add(i4);*/
+		
+		responseVO.setArticles(list);
+		return responseVO;
+	}
+	
+	
 	public TextResponseVO handleLoginTextMsg(WeixinVO requestVO){
 		TextResponseVO responseVO = new TextResponseVO();
 		String openId = requestVO.getFromUserName();
