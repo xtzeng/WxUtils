@@ -38,6 +38,7 @@ public class TextMsgService {
 	 * @return
 	 */
 	public TextResponseVO handleTextMsg(TextResquestVO requestVO){
+		logger.info(requestVO.toString());
 		TextResponseVO responseVO = new TextResponseVO();
 		String openId = requestVO.getFromUserName();
 		responseVO.setToUserName(requestVO.getFromUserName());

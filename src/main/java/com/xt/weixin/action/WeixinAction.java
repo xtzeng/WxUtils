@@ -1,6 +1,5 @@
 package com.xt.weixin.action;
 
-import java.sql.SQLException;
 
 import javax.annotation.Resource;
 
