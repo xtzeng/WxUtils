@@ -19,6 +19,7 @@ import com.xt.weixin.common.vo.TextResquestVO;
 import com.xt.weixin.common.vo.WeixinVO;
 import com.xt.weixin.dao.TextMsgDao;
 import com.xt.weixin.po.TextMsg;
+import com.xt.weixin.utils.PropertiesConfig;
 
 
 /**
@@ -71,8 +72,8 @@ public class TextMsgService {
 		PictureTextResponseVO.Item i1 = responseVO.new Item();
 		i1.setTitle("你好世界！");
 		i1.setDescription("this is a description");
-		i1.setPicUrl("http://114.215.125.186/WxUtils/images/nba_allstar.jpg");
-		i1.setUrl("http://114.215.125.186/WxUtils/index.jsp?openId="+openId);
+		i1.setPicUrl(PropertiesConfig.getInstance().get("sys.url")+"images/nba_allstar.jpg");
+		i1.setUrl(PropertiesConfig.getInstance().get("sys.url")+"index.jsp?openId="+openId);
 		list.add(i1);
 		
 		responseVO.setArticles(list);
