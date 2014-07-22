@@ -69,7 +69,7 @@ public class TextMsgService {
 		List<PictureTextResponseVO.Item> list =  new ArrayList<PictureTextResponseVO.Item>();
 		
 		PictureTextResponseVO.Item i1 = responseVO.new Item();
-		i1.setTitle("Hello“World”");
+		i1.setTitle("你好世界！");
 		i1.setDescription("this is a description");
 		i1.setPicUrl("http://114.215.125.186/WxUtils/images/nba_allstar.jpg");
 		i1.setUrl("http://114.215.125.186/WxUtils/index.jsp?openId="+openId);
