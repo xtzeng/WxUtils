@@ -70,12 +70,12 @@ public class XmlUtils {
     				List list = (List) method.invoke(responseVO); //通过上面获得的Method对象 ，【invoke调用】 调用getter方法获取属性值
     				if(list != null && !list.isEmpty()){
     					for(Object obj : list){  //  循环遍历  list 集合
-    						xml.append("<").append(obj.getClass().getSimpleName().toLowerCase()).append(">");
+    						xml.append("<").append(obj.getClass().getSimpleName()).append(">");
     						Field[] fs = obj.getClass().getDeclaredFields(); // 获取【集合里的对象】的所有属性，返回Field数组  
     						for(int k=0 ; k<fs.length ; k++){
     							String itemName = fs[k].getName();
     							if(!itemName.contains("this")){ // 如果是内部类  会包含一个 【 this@..】   的一个属性
-	    							xml.append("<").append(itemName).append(">"); 
+	    							xml.append("<").append(itemName.toLowerCase()).append(">"); 
 	    							Method itemMethod = obj.getClass().getMethod("get" + StringUtils.capitalize(itemName));
 	    			    			String type = fs[k].getGenericType().toString();
 	    			    			String itemValue = itemMethod.invoke(obj).toString();  
@@ -85,10 +85,10 @@ public class XmlUtils {
 	    			    			else{
 	    			    				xml.append(itemValue);  
 	    			    			}
-	    							xml.append("</").append(itemName).append(">"); 
+	    							xml.append("</").append(itemName.toLowerCase()).append(">"); 
 	    						}
     						}
-    						xml.append("</").append(obj.getClass().getSimpleName().toLowerCase()).append(">");
+    						xml.append("</").append(obj.getClass().getSimpleName()).append(">");
     					}
     				}
     			}else{
