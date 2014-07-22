@@ -13,7 +13,7 @@ public class PictureTextResponseVO {
 	private long CreateTime;
 	private String MsgType;
 	private int ArticleCount;
-	private List<item> Articles;
+	private List<Item> Articles;
 	
 	
 	
@@ -47,38 +47,43 @@ public class PictureTextResponseVO {
 	public void setArticleCount(int articleCount) {
 		ArticleCount = articleCount;
 	}
-	public List<item> getArticles() {
+	public List<Item> getArticles() {
 		return Articles;
 	}
-	public void setArticles(List<item> articles) {
+	public void setArticles(List<Item> articles) {
 		Articles = articles;
 	}
 	
 	
 	
-	public class item{
+	public class Item{
+		
 		private String Title;
 		private String Description;
 		private String PicUrl;
 		private String Url;
+		
 		public String getTitle() {
 			return Title;
 		}
 		public void setTitle(String title) {
 			Title = title;
 		}
+		
 		public String getDescription() {
 			return Description;
 		}
 		public void setDescription(String description) {
 			Description = description;
 		}
+		
 		public String getPicUrl() {
 			return PicUrl;
 		}
 		public void setPicUrl(String picUrl) {
 			PicUrl = picUrl;
 		}
+		
 		public String getUrl() {
 			return Url;
 		}
