@@ -65,14 +65,14 @@ public class TextMsgService {
 		responseVO.setMsgType("news");
 		Date now = new Date();
 		responseVO.setCreateTime(now.getTime());
-		responseVO.setArticleCount(2);
+		responseVO.setArticleCount(1);
 		List<PictureTextResponseVO.item> list =  new ArrayList<PictureTextResponseVO.item>();
 		
 		PictureTextResponseVO.item i1 = responseVO.new item();
 		i1.setTitle("一代佳人2014“人气宝贝”");
 		i1.setDescription("人气风云榜");
-		i1.setPicUrl("114.215.125.186/WxUtils/images/nba_allstar.jpg");
-		i1.setUrl("114.215.125.186/WxUtils/index.jsp?openId="+openId);
+		i1.setPicUrl("http://114.215.125.186/WxUtils/images/nba_allstar.jpg");
+		i1.setUrl("http://114.215.125.186/WxUtils/index.jsp?openId="+openId);
 		list.add(i1);
 		
 		responseVO.setArticles(list);
