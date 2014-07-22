@@ -71,30 +71,9 @@ public class TextMsgService {
 		PictureTextResponseVO.item i1 = responseVO.new item();
 		i1.setTitle("一代佳人2014“人气宝贝”");
 		i1.setDescription("人气风云榜");
-		//i1.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/renqi.jpg");
-		//i1.setUrl(SystemConfigs.getInstance().get("system.url")+"/starInfo.hotStar.action?openId="+openId);
+		i1.setPicUrl("114.215.125.186/WxUtils/images/nba_allstar.jpg");
+		i1.setUrl("114.215.125.186/WxUtils/index.jsp?openId="+openId);
 		list.add(i1);
-		
-		PictureTextResponseVO.item i2 = responseVO.new item();
-		i2.setTitle("活动详情\n点击详情 >>");
-		i2.setDescription("活动详情\n点击详情 >>");
-		//i2.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/detail.jpg");
-		//i2.setUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/activityDetailInfo.jsp?openId="+openId);
-		list.add(i2);
-		
-		/*PictureTextResponseVO.item i3 = responseVO.new item();
-		i3.setTitle("足球宝贝\n点击详情 >>");
-		i3.setDescription("足球宝贝\n点击详情 >>");
-		i3.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/popularStar_04.jpg");
-		i3.setUrl(SystemConfigs.getInstance().get("system.url")+"/starInfo.hotStar.action?openId="+openId);
-		list.add(i3);*/
-		
-		/*PictureTextResponseVO.item i4 = responseVO.new item();
-		i4.setTitle("最新佳丽\n点击详情 >>");
-		i4.setDescription("最新佳丽\n点击详情 >>");
-		i4.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/popularStar_04.jpg");
-		i4.setUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/newBaby.jsp?openId="+openId);
-		list.add(i4);*/
 		
 		responseVO.setArticles(list);
 		return responseVO;
@@ -302,7 +281,7 @@ public class TextMsgService {
 		PictureTextResponseVO.item i1 = responseVO.new item();
 		i1.setTitle("一代佳人2014“人气宝贝”");
 		i1.setDescription("人气风云榜");
-		//i1.setPicUrl(SystemConfigs.getInstance().get("system.url")+"/subscription/residence/images/renqi.jpg");
+		i1.setPicUrl("114.215.125.186/WxUtils/images/nba_allstar.jpg");
 		//i1.setUrl(SystemConfigs.getInstance().get("system.url")+"/starInfo.hotStar.action?openId="+openId);
 		list.add(i1);
 		

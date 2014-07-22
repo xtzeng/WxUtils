@@ -4,7 +4,6 @@ import java.util.List;
 
 /**
  * 图文类型
- * @author Forest
  *
  */
 public class PictureTextResponseVO {

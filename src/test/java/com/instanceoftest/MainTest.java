@@ -22,16 +22,16 @@ public class MainTest {
 	     B b=null;
 	     boolean res; 
 	     
-	     System.out.println("instanceoftest test case 1: ------------------");
+	     System.out.println("【instanceoftest test case 1: ------------------】");
 	     res = a instanceof A; 
 	     System.out.println("a instanceof A: " + res);
 	       
 	     res = b instanceof B;
 	     System.out.println("b instanceof B: " + res);
 	       
-	     System.out.println("/ninstanceoftest test case 2: ------------------");   
-	     a=new B();
-	     b=new B();
+	     System.out.println("【/ninstanceoftest test case 2: ------------------】");   
+	     a = new B();
+	     b = new B();
 	     
 	     res = a instanceof A; 
 	     System.out.println("a instanceof A: " + res);
@@ -45,8 +45,8 @@ public class MainTest {
 	     res = b instanceof B;
 	     System.out.println("b instanceof B: " + res);
 	    
-	     System.out.println("/ninstanceoftest test case 3: ------------------");
-	     B b2=(C)new C();
+	     System.out.println("【/ninstanceoftest test case 3: ------------------】");
+	     B b2 = (C) new C();
 	     
 	     res = b2 instanceof A;
 	     System.out.println("b2 instanceof A: " + res);
@@ -56,6 +56,19 @@ public class MainTest {
 	     
 	     res = b2 instanceof C;
 	     System.out.println("b2 instanceof C: " + res);
+	     
+	     
+	     System.out.println("【/ninstanceoftest test case 4: ------------------】");
+	     C c = new C();
+	     
+	     res = c instanceof A;
+	     System.out.println("c instanceof A: " + res);
+	     
+	     res = c instanceof B;
+	     System.out.println("c instanceof B: " + res);
+	     
+	     res = c instanceof C;
+	     System.out.println("c instanceof C: " + res);
 
 
 	}
