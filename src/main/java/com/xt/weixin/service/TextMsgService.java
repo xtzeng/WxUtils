@@ -73,7 +73,7 @@ public class TextMsgService {
 		i1.setTitle("你好世界！");
 		i1.setDescription("this is a description");
 		i1.setPicUrl(PropertiesConfig.getInstance().get("sys.url")+"images/nba_allstar.jpg");
-		i1.setUrl(PropertiesConfig.getInstance().get("sys.url")+"index.jsp?openId="+openId);
+		i1.setUrl(PropertiesConfig.getInstance().get("jsp.url")+"index.html?openId="+openId);
 		list.add(i1);
 		
 		responseVO.setArticles(list);

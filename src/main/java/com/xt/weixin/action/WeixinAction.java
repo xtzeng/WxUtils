@@ -55,7 +55,7 @@ public class WeixinAction extends BaseAction implements WeixinModelDriven{
 		if (weixinModel instanceof TextResquestVO) {
 			TextResquestVO textVO = (TextResquestVO)weixinModel;
 			String content = textVO.getContent();
-			if(StringUtils.equals(content, "系统")){
+			if(StringUtils.equals(content, "baidu")){
 				//如果用户发的是文本信息，而且文本内容为系统，返回系统链接
 				Object responseVO = textMsgService.handleTextMsg(textVO);
 				write(XmlUtils.writeXml(responseVO));
