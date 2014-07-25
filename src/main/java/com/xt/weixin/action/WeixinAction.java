@@ -37,12 +37,6 @@ public class WeixinAction extends BaseAction implements WeixinModelDriven{
 	@Resource(name="textMsgService")
 	private TextMsgService textMsgService;
 	
-//	@Resource(name="eventMsgService")
-//	private EventMsgService eventMsgService;
-	
-//	@Resource(name="userService")
-//	private UserService userService;
-	
 	@Resource(name="subscriptionCountService")
 	private SubscriptionCountService subscriptionCountService;
 	
