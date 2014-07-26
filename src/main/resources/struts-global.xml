@@ -38,7 +38,7 @@
 		<default-interceptor-ref name="WxStack"/>
          
 	   <global-results>
-        	<result name="error" >forbidden.jsp</result>
+        	<result name="error" >error.jsp</result>
         	<result name="exception">exception.jsp</result>
         </global-results>
 
