@@ -35,6 +35,10 @@ public class LinkResponseVO  implements WeixinVO{
 		Url = url;
 	}
 	
+	public LinkResponseVO() {
+		
+	}
+
 	public String getToUserName() {
 		return ToUserName;
 	}

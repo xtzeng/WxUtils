@@ -13,8 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
+import org.apache.struts2.StrutsStatics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 
 import com.opensymphony.xwork2.Action;
@@ -55,6 +57,14 @@ public class WeixinInterceptor implements Interceptor{
 		
 		ActionContext ctx = ActionContext.getContext();
 		HttpServletRequest request = (HttpServletRequest)ctx.get(ServletActionContext.HTTP_REQUEST);
+		
+		ActionContext actionContext = invocation.getInvocationContext();   
+		HttpServletRequest request2= (HttpServletRequest) actionContext.get(StrutsStatics.HTTP_REQUEST);
+		
+		if (request.equals(request2)) {
+			logger.info("【request和request2为同一个对象】");
+		}
+		
 		WeixinAction weixinAction = (WeixinAction)invocation.getAction();
 		//0 读取xml
 		InputStream inputStream = request.getInputStream();
