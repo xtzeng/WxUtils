@@ -89,7 +89,7 @@ public class TextMsgService {
 		responseVO.setMsgType("link");
 		Date now = new Date();
 		responseVO.setCreateTime(now.getTime());
-		responseVO.setUrl(PropertiesConfig.getInstance().get("jsp.url")+"login.jsp");
+		responseVO.setUrl(PropertiesConfig.getInstance().get("sys.url")+"login.jsp");
 		responseVO.setTitle("this a title");
 		responseVO.setDescription("this is a description");
 		return responseVO;

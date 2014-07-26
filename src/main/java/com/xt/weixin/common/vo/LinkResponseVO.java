@@ -10,8 +10,6 @@ public class LinkResponseVO  implements WeixinVO{
     private long CreateTime; 
     // 消息类型（text/image/location/link） 
     private String MsgType; 
-    // 消息id，64位整型 
-    private long MsgId;
 	// 消息标题 
     private String Title; 
     // 消息描述 
@@ -22,14 +20,13 @@ public class LinkResponseVO  implements WeixinVO{
     
     
 	public LinkResponseVO(String toUserName, String fromUserName,
-			long createTime, String msgType, long msgId, String title,
+			long createTime, String msgType,  String title,
 			String description, String url) {
 		super();
 		ToUserName = toUserName;
 		FromUserName = fromUserName;
 		CreateTime = createTime;
 		MsgType = msgType;
-		MsgId = msgId;
 		Title = title;
 		Description = description;
 		Url = url;
@@ -63,12 +60,7 @@ public class LinkResponseVO  implements WeixinVO{
 	public void setMsgType(String msgType) {
 		MsgType = msgType;
 	}
-	public long getMsgId() {
-		return MsgId;
-	}
-	public void setMsgId(long msgId) {
-		MsgId = msgId;
-	}
+
 	public String getTitle() {
 		return Title;
 	}
