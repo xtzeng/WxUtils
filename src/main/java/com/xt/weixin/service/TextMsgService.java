@@ -92,7 +92,6 @@ public class TextMsgService {
 		responseVO.setUrl(PropertiesConfig.getInstance().get("jsp.url")+"login.jsp");
 		responseVO.setTitle("this a title");
 		responseVO.setDescription("this is a description");
-		responseVO.setMsgId(requestVO.getMsgId());
 		return responseVO;
 	}
 	
