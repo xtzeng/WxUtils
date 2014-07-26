@@ -44,13 +44,12 @@ public class TextMsgService {
 	public TextResponseVO handleTextMsg(TextResquestVO requestVO){
 		logger.info(requestVO.toString());
 		TextResponseVO responseVO = new TextResponseVO();
-		String openId = requestVO.getFromUserName();
 		responseVO.setToUserName(requestVO.getFromUserName());
 		responseVO.setFromUserName(requestVO.getToUserName());
 		responseVO.setMsgType("text");
 		Date now = new Date();
 		responseVO.setCreateTime(now.getTime());
-		responseVO.setContent("请点击该链接进入手机百度:<a href='http://m.baidu.com/'>登录系统</a>");
+		responseVO.setContent("请点击该链接进入手机百度:<a href='http://m.baidu.com/'>断点</a>");
 		
 		return responseVO;
 	}
@@ -82,16 +81,14 @@ public class TextMsgService {
 
 	public Object handleLinkMessage(TextResquestVO requestVO) {
 		logger.info(requestVO.toString());
-		LinkResponseVO responseVO = new LinkResponseVO();
+		
+		TextResponseVO responseVO = new TextResponseVO();
 		
 		responseVO.setToUserName(requestVO.getFromUserName());
 		responseVO.setFromUserName(requestVO.getToUserName());
-		responseVO.setMsgType("link");
-		Date now = new Date();
-		responseVO.setCreateTime(now.getTime());
-		responseVO.setUrl(PropertiesConfig.getInstance().get("sys.url")+"login.jsp");
-		responseVO.setTitle("this a title");
-		responseVO.setDescription("this is a description");
+		responseVO.setMsgType("text");
+		responseVO.setCreateTime(new Date().getTime());
+		responseVO.setContent("请点击该链接进入手机百度:<a href='" + PropertiesConfig.getInstance().get("sys.url") + "html/happiness.html"+ "'>断点</a>");
 		return responseVO;
 	}
 	
