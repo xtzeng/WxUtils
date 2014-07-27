@@ -88,7 +88,7 @@ public class TextMsgService {
 		responseVO.setFromUserName(requestVO.getToUserName());
 		responseVO.setMsgType("text");
 		responseVO.setCreateTime(new Date().getTime());
-		responseVO.setContent("请点击该链接进入手机百度:<a href='" + PropertiesConfig.getInstance().get("sys.url") + "html/happiness.html"+ "'>断点</a>");
+		responseVO.setContent("请点击该链接进入:<a href='" + PropertiesConfig.getInstance().get("sys.url") + "html/happiness.html"+ "'>千万不要去打扰别人的幸福</a>");
 		return responseVO;
 	}
 	
