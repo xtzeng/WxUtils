@@ -8,7 +8,7 @@ public class MenuUtilTest {
 	@Test
 	public void testGetAccessToken() {
 		
-		//System.out.println(MenuUtil.getAccess_token());
+		System.out.println(MenuUtil.getAccess_token());
 	}
 	
 	

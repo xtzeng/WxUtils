@@ -5,7 +5,9 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,8 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.StrutsStatics;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+
 
 
 
@@ -63,6 +67,29 @@ public class WeixinInterceptor implements Interceptor{
 		
 		if (request.equals(request2)) {
 			logger.info("【request和request2为同一个对象】");
+		}
+		
+		Map<String,String[]> paramMap = request.getParameterMap();
+		Set<Map.Entry<String, String[]>> entries = paramMap.entrySet();
+		for (Iterator<Map.Entry<String, String[]>> it = entries.iterator();it.hasNext();) {
+			Map.Entry<String, String[]> entry = it.next();
+			String paramName = entry.getKey();
+			logger.info("【"+ paramName +"】");
+			String[] paramValues = entry.getValue();
+			if (paramValues.length==1) {
+				String paramValue = paramValues[0];
+				
+				if (paramValue.length()==0) {
+					logger.info("【no Value】");
+				}else {
+					logger.info("【paramValue========】"+paramValue);
+				}
+			}else {
+				
+				for (int i = 0; i < paramValues.length; i++) {
+					logger.info("参数同名【"+i+"】"+paramValues[i]);
+				}
+			}
 		}
 		
 		WeixinAction weixinAction = (WeixinAction)invocation.getAction();
