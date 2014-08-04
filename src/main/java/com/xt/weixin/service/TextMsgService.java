@@ -2,24 +2,18 @@ package com.xt.weixin.service;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.Resource;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.xt.weixin.common.vo.LinkResponseVO;
 import com.xt.weixin.common.vo.PictureTextResponseVO;
 import com.xt.weixin.common.vo.TextResponseVO;
 import com.xt.weixin.common.vo.TextResquestVO;
 import com.xt.weixin.common.vo.WeixinVO;
-import com.xt.weixin.dao.TextMsgDao;
-import com.xt.weixin.po.TextMsg;
 import com.xt.weixin.utils.PropertiesConfig;
 
 
@@ -32,8 +26,7 @@ import com.xt.weixin.utils.PropertiesConfig;
 public class TextMsgService {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@Resource(name="textMsgDao")
-	private TextMsgDao textMsgDao;
+
 	
 	
 	/**

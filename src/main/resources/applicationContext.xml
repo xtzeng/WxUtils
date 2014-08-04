@@ -39,7 +39,7 @@
 	            <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>   <!-- 定义数据库方言 -->
 	            <prop key="hibernate.show_sql">true</prop>    <!-- 在控制台显示sql语句 -->
 	            <prop key="hibernate.format_sql">true</prop>  <!-- 格式化sql语句 -->
-	            <prop key="hibernate.hbm2ddl.auto">update</prop>    
+	            <!-- <prop key="hibernate.hbm2ddl.auto">update</prop> --> 
 	        </props>  
 	    </property> 
       
